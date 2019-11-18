@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show destroy]
 
+  def new
+    @event = Event.new
+  end
+
   def index
     @events = Event.all
   end
