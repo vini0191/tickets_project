@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[show edit update destroy]
+  before_action :set_event, only: %i[edit new update]
 
   def index
     @tickets = Ticket.all
@@ -14,9 +15,11 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
-    @ticket.save
-    raise
-    redirect_to tickets_path
+    if @ticket.save
+      redirect_to event_path(@ticket.event)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -24,21 +27,25 @@ class TicketsController < ApplicationController
 
   def update
     @ticket.update(ticket_params)
-    redirect_to tickets_path
+    redirect_to event_path(@event)
   end
 
   def destroy
     @ticket.destroy
-    redirect_to tickets_path
+    redirect_to events_path
   end
 
   private
 
   def ticket_params
-    params.require(:ticket).permit(:price, :seat, :type)
+    params.require(:ticket).permit(:price, :seat, :area)
   end
 
   def set_ticket
     @ticket = Ticket.find(params[:id])
+  end
+
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 end
