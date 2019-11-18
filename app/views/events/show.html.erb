@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8">
+      <div class="card">
+        <div class="card-title">
+          <h2 class="p-2">
+            <%= @event.title %>
+          </h2>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p>local: <%= @event.location %></p>
+            <% @event.tickets.each do |ticket| %>
+              <%= link_to event_ticket_path(ticket) do %>
+                <p>
+                  $<%=  ticket.price / 100.0 %> | <%= link_to ticket.user.name, root_path %>
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <%= link_to "Back", events_path, class: " my-2 btn btn-outline-primary float-right" %>
+    </div>
+  </div>
+</div>
