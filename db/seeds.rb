@@ -15,12 +15,32 @@ Ticket.destroy_all
 puts 'Destroying users...'
 User.destroy_all
 
-puts 'Creating events and tickets...'
-event = Event.create(title: 'Demoday Le Wagon', location: 'Rua Mourato Coelho 1440', category: 'Meetup', start_time: Time.new(2019, 12, 7, 20))
+puts 'Creating fake Users...'
+20.times do
+  User.create!(name: Faker::Name.name,
+    email: Faker::Internet.email,
+    city: Faker::Address.city,
+    password: 'password')
+end
 
-ticket = Ticket.new(price: 2000, seat: '5A', area: 'vip')
-ticket.event = event
-ticket.user = User.create(name: 'João', email: 'juca@gmail.com')
-ticket.save!
+puts 'Creating fake Events...'
+100.times do
+  Event.create!(title: Faker::Name.name,
+    location: Faker::Address.street_address,
+    category: %w[show theatre party lecture workshop wellness art].sample,
+    start_time: Faker::Time.forward(days: 23, period: :evening)
+    )
+end
+
+puts 'Creating fake tickets...'
+
+300.times do
+  ticket = Ticket.new(price: Faker::Number.number(digits: 5),
+    seat: %w[3D 8H 27 829 E93 87 801 45 988E A65 F62].sample,
+    area: %w[vip field camarote normal half-price backstage].sample)
+  ticket.event = Event.find(rand(Event.first.id..Event.last.id))
+  ticket.user = User.find(rand(User.first.id..User.last.id))
+  ticket.save!
+end
 
 puts 'Done!'
