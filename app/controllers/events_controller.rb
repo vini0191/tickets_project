@@ -14,9 +14,22 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      render :new
+    end
+  end
+
   private
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def event_params
+    params.require(:event).permit(:title, :start_time, :location, :category)
   end
 end
