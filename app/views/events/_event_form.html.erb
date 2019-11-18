@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card shadow-sm m-4 p-4">
+      <h2>Add a New Event</h2>
+      <%= simple_form_for @event do |f| %>
+        <%= f.input :title, label: 'Event Name' %>
+        <%= f.input :start_time %>
+        <%= f.input :location %>
+        <%= f.input :category %>
+        <%= link_to "Cancel", events_path, class: 'btn btn-outline-danger float-left', data: { confirm: 'Are you sure?' } %>
+        <%= f.button :submit, class: 'btn btn-outline-primary float-right' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
