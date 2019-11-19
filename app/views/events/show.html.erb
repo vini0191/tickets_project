@@ -29,7 +29,9 @@
             <% end %>
 
           </div>
+          <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn btn-outline-primary float-right' %>
         </div>
+
       </div>
       <%= link_to "Back", events_path, class: " my-2 btn btn-outline-primary float-left" %>
       <%= link_to "Delete", event_path(@event), method: :delete, class: " my-2 btn btn-outline-danger float-right", data: { confirm: 'Are You Sure?'} %>
