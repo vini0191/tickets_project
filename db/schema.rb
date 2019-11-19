@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_213051) do
+ActiveRecord::Schema.define(version: 2019_11_19_163452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2019_11_18_213051) do
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
+  create_table "trades", force: :cascade do |t|
+    t.string "status", default: "confirmation pending"
+    t.bigint "ticket_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_trades_on_ticket_id"
+    t.index ["user_id"], name: "index_trades_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -54,4 +64,6 @@ ActiveRecord::Schema.define(version: 2019_11_18_213051) do
 
   add_foreign_key "tickets", "events"
   add_foreign_key "tickets", "users"
+  add_foreign_key "trades", "tickets"
+  add_foreign_key "trades", "users"
 end
