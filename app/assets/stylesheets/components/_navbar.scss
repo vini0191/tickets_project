@@ -1,6 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  color: white;
+  background:transparent;
+  z-index: 100;
+  position: fixed;
+  width: 100vw;
+}
+
+.navbar-appear {
+  background-color: rgba(35, 35, 35, 0.7);
+  box-shadow: 0 0 15px rgba(0,0,0, 0.5);
 }
 
 .navbar-lewagon .navbar-collapse {
