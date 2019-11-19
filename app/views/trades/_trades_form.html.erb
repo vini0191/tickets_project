@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+      <div class="card">
+        <div class="card-title p-4">
+          <h2><%= @ticket.user.name %></h2>
+        </div>
+        <div class="card-body p-4">
+          <div class="card-text">
+            <p><%= @ticket.seat %></p>
+            <p><%= @ticket.area %></p>
+            <p><strong>$<%= @ticket.price / 100.0 %></strong></p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Check Out", 'checkout', class: 'btn btn-outline-primary float-right' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
           <div class="card-text">
             <p>local: <%= @event.location %></p>
             <% @event.tickets.each do |ticket| %>
-              <%= link_to event_ticket_path(ticket) do %>
+              <%= link_to event_ticket_path(@event, ticket) do %>
                 <p>
                   $<%=  ticket.price / 100.0 %> | <%= link_to ticket.user.name, root_path %>
                 </p>
