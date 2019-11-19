@@ -8,8 +8,10 @@ class TradesController < ApplicationController
 
   def create
     @trade = Trade.new
+    @trade.ticket = @ticket
+    @trade.user = current_user
     if @trade.save
-      redirect_to ticket(@ticket)
+      redirect_to ticket_path(@ticket)
     else
       render :show
     end

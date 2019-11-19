@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <%= link_to "Back", events_path, class: " my-2 btn btn-outline-primary float-left" %>
+      <%= link_to "Back", :back, class: " my-2 btn btn-outline-primary float-left" %>
       <%= link_to "Delete", event_path(@event), method: :delete, class: " my-2 btn btn-outline-danger float-right", data: { confirm: 'Are You Sure?'} %>
     </div>
   </div>

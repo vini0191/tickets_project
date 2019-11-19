@@ -9,7 +9,7 @@
         <p>Area: <%= @ticket.area %></p>
       </div>
       <%= link_to 'Buy', new_ticket_trade_path(@ticket), class: "btn btn-outline-primary float-right mt-2" %>
-      <%= link_to 'Back', event_path(@ticket), class: "btn btn-outline-danger float-left mt-2" %>
+      <%= link_to 'Back', event_path(@ticket.event), class: "btn btn-outline-danger float-left mt-2" %>
     </div>
   </div>
 </div>
