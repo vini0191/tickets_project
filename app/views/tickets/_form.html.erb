@@ -1,0 +1,6 @@
+<%= simple_form_for [@event, @ticket] do |f| %>
+  <%= f.input :price %>
+  <%= f.input :seat %>
+  <%= f.input :area %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
