@@ -12,6 +12,11 @@
 @import "components/index";
 @import "pages/index";
 
-body {
+body, {
   background-color: #241f1e;
+  color: #EBEAEA;
+}
+
+.form-control {
+  background-color: #EBEAEA;
 }
