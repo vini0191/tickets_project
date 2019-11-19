@@ -1,6 +1,8 @@
 class TicketsController < ApplicationController
-  before_action :set_ticket, only: %i[show edit update destroy]
-  before_action :set_event, only: %i[edit new update]
+  before_action :set_ticket, except: %i[index new create]
+  # before_action :set_ticket, only: %i[show edit update destroy]
+  before_action :set_event, except: %i[index destroy]
+  # before_action :set_event, only: %i[new create edit show update]
 
   def index
     @tickets = Ticket.all
@@ -15,6 +17,9 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.user = current_user
+    @ticket.event = @event
+    # raise
     if @ticket.save
       redirect_to event_path(@ticket.event)
     else

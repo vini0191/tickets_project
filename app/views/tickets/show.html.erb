@@ -1,3 +1,5 @@
 <p>Price: <%= @ticket.price %></p>
 <p>Seat: <%= @ticket.seat %></p>
 <p>Area: <%= @ticket.area %></p>
+
+<%= link_to 'Back', event_path(@ticket), class: "btn btn-outline-primary" %>
