@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @events_recent = Event.all.order('created_at DESC').take(9)
-    @events_diff = (Event.all - @events_recent)
+    @events_diff = (Event.all - @events_recent).first(12)
   end
 end
