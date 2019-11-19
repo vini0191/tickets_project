@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.all.order('created_at DESC').take(9)
   end
 
   def destroy
