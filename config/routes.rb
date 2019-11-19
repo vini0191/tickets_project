@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :events, only: %i[index show destroy new create] do
     resources :tickets, only: %i[new create edit update show]
   end
+
+  resources :trades
 end
