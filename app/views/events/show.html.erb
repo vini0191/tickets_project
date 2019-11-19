@@ -27,6 +27,8 @@
               <% end %>
 
             <% end %>
+            
+            <%= link_to "New ticket", new_event_ticket_path(@event), class: " my-2 btn btn-outline-primary float-left" %>
 
           </div>
           <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn btn-outline-primary float-right' %>
