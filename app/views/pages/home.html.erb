@@ -1,8 +1,7 @@
 
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "concert-image.jpg" %>'); height: 80vh; background-size: cover; background-position: center">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "concert-image.jpg" %>')">
   <div class="container">
-    <div>
+    <div class="banner-content">
       <h1 class="text-center p-3 mb-2 text-white">Find the perfect event</h1>
 
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
@@ -35,7 +34,7 @@
 
 
 <div class="container">
-  <h4 class="mt-5 mb-2">Popular events</h4>
+  <h4 class="mt-5 mb-2 text-white">Popular events</h4>
 
   <div class="row mb-3">
     <% @events.each do |event| %>
