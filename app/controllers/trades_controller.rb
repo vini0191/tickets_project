@@ -11,7 +11,7 @@ class TradesController < ApplicationController
     @trade.ticket = @ticket
     @trade.user = current_user
     if @trade.save
-      redirect_to ticket_path(@ticket)
+      redirect_to ticket_trade_path(@ticket, @trade)
     else
       render :show
     end
