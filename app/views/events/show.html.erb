@@ -3,8 +3,7 @@
     <div class="col-sm-12 col-md-8">
       <div class="card">
         <div class="card-title">
-          <%#= cl_image_tag @event.photo, height: 300, width: 400, crop: :fill %>
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=2467&q=80" alt="" style="height: 300px; width: 400px">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=2467&q=80" class= "pic" alt="event cover">
           <h2 class="p-2">
             <%= @event.title %>
           </h2>
@@ -21,7 +20,7 @@
                 <% next if ticket.trades.count > 0 %>
                 <!-- only show available tickets -->
 
-                <div class="card p-1 m-1 shadow-lg flex-row justify-content-between">
+                <div class="card p-1 m-1 shadow-lg flex-row justify-content-between ticket-option">
                   <%= link_to ticket_path(ticket) do %>
                     <p class="card-text p-3">
                       <i class="fas fa-dollar-sign"></i> <%= ticket.price / 100.0 %>
