@@ -18,6 +18,7 @@ $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
 
+$text-light-color: #EAEAEA;
 // Buttons & inputs' radius
 $border-radius:    2px;
 $border-radius-lg: 2px;
@@ -26,7 +27,7 @@ $border-radius-sm: 2px;
 $link-hover-decoration: none;
 $link-color: $body-color;
 // Override other variables below!
-
-// card backgroun color
+$link-color: $text-light-color;
+// card background color
 $card-bg: #352e2d;
 
