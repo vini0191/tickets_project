@@ -39,6 +39,7 @@
   <div class="row mb-3">
     <% @events_recent.each do |event| %>
       <div class="col-sm-4 mb-3">
+        <%= link_to event do %>
         <div class="card-trip">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <div class="card-trip-infos">
@@ -51,6 +52,7 @@
             <h2 class="card-trip-pricing">£99.99</h2>
           </div>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -62,6 +64,7 @@
   <div class="row mb-3">
     <% @events_diff.each do |event| %>
       <div class="col-sm-4 mb-3">
+        <%= link_to event do %>
         <div class="card-trip">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <div class="card-trip-infos">
@@ -74,8 +77,14 @@
             <h2 class="card-trip-pricing">£99.99</h2>
           </div>
         </div>
-      </div>
+      <% end %>
+     </div>
     <% end %>
   </div>
+  <%= link_to events_path do %>
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-lg btn-outline-light deco-none ">See more</button>
+  </div>
+  <% end %>
 </div>
 
