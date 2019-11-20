@@ -27,5 +27,8 @@
 
 .navbar .dropdown-item {
   padding: 10px;
-  color: #AC1221;
+  color: #FFF;
+  &:hover {
+    color: #352E2D;
+  }
 }
