@@ -20,7 +20,7 @@
             <div class="class card-text">⭐️⭐️⭐️</div>
           </div>
           <div class="my-4">
-            <%= link_to "Back", :back, class: 'btn btn-outline-danger float-left' %>
+            <%= link_to "Back", :back, class: 'btn_red float-left' %>
             <% if @user == current_user %>
               <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-outline-primary float-right' %>
             <% end %>
@@ -30,4 +30,3 @@
     </div>
   </div>
 </div>
-
