@@ -1,47 +1,49 @@
 <div class="container padding-top-page-content">
   <div class="row justify-content-center">
-    <div class="col-sm-12 col-md-8">
-      <div class="card">
-        <div class="card-title">
-          <%= cl_image_tag @event.photo, height: 300, width: 400, crop: :fill %>
-          <h2 class="p-2">
-            <%= @event.title %>
-          </h2>
-        </div>
-        <div class="card-body">
-          <div class="card-text">
-            <p>local: <%= @event.location %></p>
+      <div class="col-sm-12 col-md-8">
+        <div class="card">
+          <div class="card-title">
+            <%= cl_image_tag @event.photo, height: 300, width: 400, crop: :fill %>
+            <h2 class="p-2">
+              <%= @event.title %>
+            </h2>
+          </div>
+          <div class="card-body">
+            <div class="card-text">
+              <p>local: <%= @event.location %></p>
 
-            <% if @event.tickets.count == 0 %>
-              <p>No available tickets</p>
-            <% else %>
+              <% if @event.tickets.count == 0 %>
+                <p>No available tickets</p>
+              <% else %>
 
-              <% @event.tickets.each do |ticket| %>
-                <% next if ticket.trades.count > 0 %>
-                <!-- only show available tickets -->
+                <% @event.tickets.each do |ticket| %>
+                  <% next if ticket.trades.count > 0 %>
+                  <!-- only show available tickets -->
 
-                <div class="card p-1 m-1 shadow-lg flex-row justify-content-between">
-                  <%= link_to ticket_path(ticket) do %>
-                    <p class="card-text p-3">
-                      <i class="fas fa-dollar-sign"></i> <%= ticket.price / 100.0 %>
-                    </p>
-                    <p class="card-text p-3">
-                      <%= link_to ticket.user.name, user_profile_path(ticket.user) %>
-                    </p>
-                  <% end %>
-                </div>
+                  <div class="card p-1 m-1 shadow-lg flex-row justify-content-between">
+                    <%= link_to ticket_path(ticket) do %>
+                      <p class="card-text p-3">
+                        <i class="fas fa-dollar-sign"></i> <%= ticket.price / 100.0 %>
+                      </p>
+                      <p class="card-text p-3">
+                        <%= link_to ticket.user.name, user_profile_path(ticket.user) %>
+                      </p>
+                    <% end %>
+                  </div>
+
+                <% end %>
 
               <% end %>
 
-            <% end %>
-
+            </div>
           </div>
-        </div>
-          <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn btn-outline-primary float-right' %>
+            <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn btn-outline-primary float-right' %>
 
+        </div>
+        <%= link_to "Back", events_path, class: " my-2 btn btn-outline-primary float-left" %>
+        <%= link_to "Delete", event_path(@event), method: :delete, class: " my-2 btn btn-outline-danger float-right", data: { confirm: 'Are You Sure?'} %>
       </div>
-      <%= link_to "Back", events_path, class: " my-2 btn btn-outline-primary float-left" %>
-      <%= link_to "Delete", event_path(@event), method: :delete, class: " my-2 btn btn-outline-danger float-right", data: { confirm: 'Are You Sure?'} %>
-    </div>
+
+
   </div>
 </div>

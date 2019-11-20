@@ -6,7 +6,16 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.page(params[:page]).per(18)
+    if params[:search].present?
+      location_results = params[:search][:location].empty? ? '' : params[:search][:location]
+      date_results = params[:search][:date].empty? ? '' : params[:search][:date]
+      title_results = params[:search][:title].empty? ? '' : params[:search][:title]
+      results
+      @events = Event.where("lower(location) = ?", location.downcase)
+                     .page(params[:page]).per(18)
+    else
+      @events = []
+    end
   end
 
   def destroy

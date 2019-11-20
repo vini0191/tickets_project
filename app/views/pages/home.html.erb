@@ -4,12 +4,12 @@
     <div class="banner-content">
       <h1 class="text-center p-3 mb-2 text-white">Find the perfect event</h1>
 
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <%= simple_form_for :search, url: events_path, method: :get do |f| %>
 
        <div class="form-row align-items-center justify-content-center">
          <div class="col-sm-3 my-1">
           <label class="sr-only" for="inlineFormInputGroupCity">City</label>
-          <input type="text" class="form-control" type="text" name="search[city]" placeholder="city or zipcode">
+          <input type="text" class="form-control" type="text" name="search[location]" placeholder="city or zipcode">
          </div>
 
          <div class="col-sm-3 my-1">
@@ -19,7 +19,7 @@
 
          <div class="col-sm-3 my-1">
            <label class="sr-only" for="inlineFormInputGroupEvent">Event</label>
-           <input type="text" class="form-control" type="text" name="search[event]" placeholder="event, artist or venue">
+           <input type="text" class="form-control" type="text" name="search[title]" placeholder="event, artist or venue">
          </div>
 
          <div class="col-auto my-1">
