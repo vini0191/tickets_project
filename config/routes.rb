@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
 
   root to: 'pages#home'
+  get 'pages/user_profile/:id', to: 'pages#user_profile', as: 'user_profile'
 
   resources :tickets, only: %i[edit update show destroy] do
     resources :trades, only: %i[index show new create]
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :trades, only: %i[index show]
+
 end

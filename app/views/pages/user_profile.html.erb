@@ -1,0 +1,33 @@
+<div class="container padding-top-page-content">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-title p-4">
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
+            <%= image_tag @user.photo.url ? @user.photo.url : placeholder , class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <h1><%= @user.name %></h1>
+          </div>
+        </div>
+        <div class="card-body p-4">
+          <div class="card-text text-justify">
+            <p>Mussum Ipsum, cacilds vidis litro abertis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Casamentiss faiz malandris se pirulitá. Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+            <p>Manduma pindureta quium dia nois paga. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Paisis, filhis, espiritis santis.</p>
+            <p>Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent.  Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Sapien in monti palavris qui num significa nadis i pareci latim.</p>
+          </div>
+          <div class="d-flex flex-column align-items-end mt-5">
+            <div class="class card-text">Avarage rating</div>
+            <div class="class card-text">⭐️⭐️⭐️</div>
+          </div>
+          <div class="my-4">
+            <%= link_to "Back", :back, class: 'btn btn-outline-danger float-left' %>
+            <% if @user == current_user %>
+              <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-outline-primary float-right' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
