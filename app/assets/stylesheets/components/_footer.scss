@@ -27,3 +27,10 @@
   font-size: 15px;
   color: white;
 }
+
+.footer-list {
+  justify-content: space-between;
+  li {
+  display: inline-block;
+  }
+}
