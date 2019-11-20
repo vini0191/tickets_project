@@ -1,11 +1,45 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <h1>CHECK OUT</h1>
-  </div>
-  <p>Buyer: <%= current_user.name %></p>
-  <p>Seller: <%= @ticket.user.name %></p>
-  <div class="row justify-content-between">
-    <p><%= link_to "back to event", event_path(@ticket.event) %></p>
-    <p><%= link_to "back to home", events_path %></p>
+<div class="container padding-top-page-content">
+  <div class="d-flex flex-column">
+    <div class="row justify-content-center mb-5">
+      <h1>CHECK OUT</h1>
+    </div>
+    <div class="row justify-content-center">
+      <div class="card col-sm-12 col-md-4 mx-3">
+        <div class="card-title">
+          <p class="py-2">Buyer:</p>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
+            <%= image_tag current_user.photo.url ? current_user.photo.url : placeholder , class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <h1><%= current_user.name %></h1>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p>Please, check your info:</p>
+            <p><%= current_user.email %></p>
+          </div>
+        </div>
+      </div>
+      <div class="card col-sm-12 col-md-4 mx-3">
+        <div class="card-title">
+          <p class="py-2">Seller:</p>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
+            <%= image_tag @ticket.user.photo.url ? @ticket.user.photo.url : placeholder , class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <h1><%= @ticket.user.name %></h1>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p>How to contact:</p>
+            <p><%= @ticket.user.email %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row justify-content-between px-1 my-5">
+        <p><%= link_to "back to event", event_path(@ticket.event), class: 'btn btn-outline-primary mx-3' %></p>
+        <p><%= link_to "back to home", events_path, class: 'btn btn-outline-primary float-right mx-3' %></p>
+      </div>
   </div>
 </div>
