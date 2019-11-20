@@ -8,9 +8,10 @@ $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
 $body-bg:                 $dark-gray;
 $font-size-base: 1rem;
+$text-color: #EAEAEA;
 
 // Colors
-$body-color: $gray;
+$body-color: $text-color;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
@@ -24,7 +25,7 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 $link-hover-decoration: none;
-
+$link-color: $body-color;
 // Override other variables below!
 $link-color: $text-light-color;
 // card background color
