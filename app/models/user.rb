@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :events, through: :tickets, dependent: :destroy
   has_many :tickets, dependent: :destroy
   has_many :trades, dependent: :destroy
+
+  mount_uploader :photo, PhotoUploader
 end
