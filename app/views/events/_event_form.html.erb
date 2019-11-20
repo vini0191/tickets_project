@@ -9,10 +9,9 @@
         <%= f.input :category %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= link_to "Cancel", events_path, class: 'btn btn-outline-danger float-left', data: { confirm: 'Are you sure?' } %>
-        <%= f.button :submit, class: 'btn btn-outline-primary float-right' %>
+        <%= link_to "Cancel", events_path, class: 'btn_red float-left', data: { confirm: 'Are you sure?' } %>
+        <%= f.button :submit, class: 'btn_blue float-right' %>
       <% end %>
     </div>
   </div>
 </div>
-
