@@ -1,5 +1,13 @@
-<p>Price: <%= @ticket.price %></p>
-<p>Seat: <%= @ticket.seat %></p>
-<p>Area: <%= @ticket.area %></p>
-
-<%= link_to 'Back', event_path(@ticket), class: "btn btn-outline-primary" %>
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-sm-12 col-md-4">
+      <div class="card p-4">
+        <p>Price: <%= @ticket.price %></  p>
+        <p>Seat: <%= @ticket.seat %></p>
+        <p>Area: <%= @ticket.area %></p>
+      </div>
+      <%= link_to 'Buy', new_ticket_trade_path(@ticket), class: "btn btn-outline-primary float-right mt-2" %>
+      <%= link_to 'Back', event_path(@ticket.event), class: "btn btn-outline-danger float-left mt-2" %>
+    </div>
+  </div>
+</div>

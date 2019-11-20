@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container padding-top-page-content">
   <div class="row justify-content-center">
     <div class="col-sm-12 col-md-8">
       <div class="card">
@@ -11,15 +11,27 @@
         <div class="card-body">
           <div class="card-text">
             <p>local: <%= @event.location %></p>
-            <% @event.tickets.each do |ticket| %>
-              <%= link_to event_ticket_path(ticket) do %>
-                <p>
-                  $<%=  ticket.price / 100.0 %> | <%= link_to ticket.user.name, root_path %>
-                </p>
+
+            <% if @event.tickets.count == 0 %>
+              <p>No available tickets</p>
+            <% else %>
+
+              <% @event.tickets.each do |ticket| %>
+                <% next if ticket.trades.count > 0 %>
+                <!-- only show available tickets -->
+                  <%= link_to ticket_path(ticket) do %>
+                    <p>
+                      $<%=  ticket.price / 100.0 %> | <%= link_to ticket.user.name, root_path %>
+                    </p>
+                  <% end %>
               <% end %>
+
             <% end %>
+
           </div>
+          <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn btn-outline-primary float-right' %>
         </div>
+
       </div>
       <%= link_to "Back", events_path, class: " my-2 btn btn-outline-primary float-left" %>
       <%= link_to "Delete", event_path(@event), method: :delete, class: " my-2 btn btn-outline-danger float-right", data: { confirm: 'Are You Sure?'} %>

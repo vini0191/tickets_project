@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, except: %i[index new create]
   # before_action :set_ticket, only: %i[show edit update destroy]
-  before_action :set_event, except: %i[index destroy]
+  before_action :set_event, except: %i[index destroy show]
   # before_action :set_event, only: %i[new create edit show update]
 
   def index

@@ -1,6 +1,18 @@
-<%= simple_form_for [@event, @ticket] do |f| %>
-  <%= f.input :price %>
-  <%= f.input :seat %>
-  <%= f.input :area %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+<div class="container padding-top-page-content" >
+  <div class="row justify-content-center">
+    <div class="card">
+      <div class="card-title p-4">
+         <h1>Add a ticket to <%= @event.title %></h1>
+      </div>
+      <div class="card-body">
+        <%= simple_form_for [@event, @ticket] do |f| %>
+          <%= f.input :price %>
+          <%= f.input :seat %>
+          <%= f.input :area %>
+          <%= f.submit class: "btn btn-outline-primary float-right" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
