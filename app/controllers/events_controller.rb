@@ -7,15 +7,15 @@ class EventsController < ApplicationController
 
   def index
     if params[:search].present?
-      location_results = params[:search][:location].empty? ? '' : params[:search][:location]
-      date_results = params[:search][:date].empty? ? '' : params[:search][:date]
-      title_results = params[:search][:title].empty? ? '' : params[:search][:title]
-      # results
-      @events = Event.where("lower(location) = ?", location.downcase)
+      @events = Event.where('lower(location) LIKE ?', "%#{params[:search][:location].downcase}%")
+                     .where('lower(title) LIKE ?', "%#{params[:search][:title].downcase}%")
                      .page(params[:page]).per(18)
+      filter_by_date unless params[:search][:date].empty?
+      @events = Kaminari.paginate_array(@events).page(params[:page]).per(18)
     else
       @events = []
     end
+    # @events
   end
 
   def destroy
@@ -34,6 +34,11 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def filter_by_date
+    date = Date.parse(params[:search][:date])
+    @events = @events.select { |event| event.start_time > date.beginning_of_day && event.start_time < date.end_of_day }
+  end
 
   def set_event
     @event = Event.find(params[:id])
