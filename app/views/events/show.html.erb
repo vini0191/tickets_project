@@ -21,7 +21,7 @@
                 <!-- only show available tickets -->
                   <%= link_to ticket_path(ticket) do %>
                     <p>
-                      $<%=  ticket.price / 100.0 %> | <%= link_to ticket.user.name, root_path %>
+                      $<%=  ticket.price / 100.0 %> | <%= link_to ticket.user.name, user_profile_path(ticket.user) %>
                     </p>
                   <% end %>
               <% end %>
