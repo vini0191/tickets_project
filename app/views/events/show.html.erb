@@ -1,5 +1,6 @@
 <div class="container padding-top-page-content">
   <div class="row justify-content-center">
+
     <div class="col-sm-12 col-md-8">
       <div class="card">
         <div class="card-title">
@@ -13,7 +14,9 @@
             <p>local: <%= @event.location %></p>
 
             <% if @event.tickets.count == 0 %>
+
               <p>No available tickets</p>
+
             <% else %>
 
               <% @event.tickets.each do |ticket| %>
@@ -21,7 +24,9 @@
                 <!-- only show available tickets -->
 
                 <div class="card p-1 m-1 shadow-lg flex-row justify-content-between ticket-option">
+
                   <%= link_to ticket_path(ticket) do %>
+
                     <p class="card-text p-3">
                       <i class="fas fa-dollar-sign"></i> <%= ticket.price / 100.0 %>
                     </p>
@@ -29,14 +34,17 @@
                       <%= link_to ticket.user.name, user_profile_path(ticket.user) %>
                     </p>
                   <% end %>
+
                 </div>
+
               <% end %>
-            </div>
-            <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn_blue float-right' %>
+            <% end %>
           </div>
+          <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn_blue float-right' %>
         </div>
-        <%= link_to "Back", events_path, class: " my-2 btn_blue float-left" %>
-        <%= link_to "Delete", event_path(@event), method: :delete, class: "my-2 btn_red float-right", data: { confirm: 'Are You Sure?'} %>
       </div>
+      <%= link_to "Back", events_path, class: " my-2 btn_blue float-left" %>
+      <%= link_to "Delete", event_path(@event), method: :delete, class: "my-2 btn_red float-right", data: { confirm: 'Are You Sure?'} %>
+    </div>
   </div>
 </div>
