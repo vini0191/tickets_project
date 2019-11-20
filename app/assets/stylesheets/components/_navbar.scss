@@ -20,6 +20,11 @@
   width: 40px;
 }
 
-.dropdown-menu {
+.dropdown-menu.dropdown-menu-right {
   background-color: #352E2D;
+  padding: 0;
+}
+
+.navbar .dropdown-item {
+  padding: 10px;
 }
