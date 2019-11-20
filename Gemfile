@@ -16,6 +16,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'faker'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 # gems to deal with events images
 gem 'dotenv-rails', groups: %i[development test]
