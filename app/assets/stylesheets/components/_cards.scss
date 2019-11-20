@@ -1,8 +1,14 @@
 .card-trip {
   overflow: hidden;
-  background: white;
+  background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-trip:hover {
+  transform: scale(1.05,1.05)
+
 }
 
 .card-trip > img {
@@ -30,7 +36,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  background-color: #352e2d;
+  color: black;
 }
 
 .card-trip-infos .card-trip-user {
