@@ -20,12 +20,15 @@
   width: 40px;
 }
 
-.home-button {
+.nav-link {
   font-size: 15px;
+  color: white !important;
 }
 
-.events-button {
-  font-size: 15px
+.nav-link:hover {
+  background-color: gray;
+  // rgb(0, 81, 245);
+  border-radius: 2px;
 }
 
 .dropdown-menu.dropdown-menu-right {
@@ -39,4 +42,8 @@
   &:hover {
     color: #352E2D;
   }
+}
+
+.nav-test {
+  font-weight: 700;
 }

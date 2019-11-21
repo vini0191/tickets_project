@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       filter_by_date unless params[:search][:date].empty?
       @events = Kaminari.paginate_array(@events).page(params[:page]).per(18)
     else
-      @events = []
+      @events = Event.all.page(params[:page]).per(18)
     end
   end
 
@@ -48,6 +48,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :start_time, :location, :category, :photo, :description)
+    params.require(:event).permit(:title, :start_time, :location, :category, :photo)
   end
 end

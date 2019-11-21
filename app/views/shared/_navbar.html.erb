@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon navbar-toggler">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo-yoohood.png" %>
   <% end %>
 
@@ -9,13 +9,21 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item active home-button mr-1 home-button mb-2 mr-2">
-          <%= link_to "Home", root_path, class: "nav-link text-white" %>
+      <% unless current_page?(root_path) %>
+        <li class="nav-item events-button mt-1 mr-3 nav-text">
+          <%= link_to "Home", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item events-button mr-2 events-button mb-2 mr-2">
-          <%= link_to "Events", events_path, class: "nav-link text-white" %>
+        <% end %>
+        <li class="nav-item events-button mt-1 mr-3">
+          <%= link_to "Events", events_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item events-button mt-1 mr-3">
+          <%= link_to "Help", "#", class: "nav-link"%>
+        </li>
+        <li class="nav-item events-button mt-1 mr-3">
+          <%= link_to "About", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
@@ -28,7 +36,13 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item btn btn btn-dark btn-sm button">
+      <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
+          <%= link_to "Contact", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
+          <%= link_to "About", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
