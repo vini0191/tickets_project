@@ -12,7 +12,7 @@
         <div class="card-body">
           <div class="card-text">
             <p>local: <%= @event.location %></p>
-
+            <p><%= @event.description %></p>
             <% if @event.tickets.count == 0 %>
 
               <p>No available tickets</p>
@@ -48,7 +48,7 @@
 
         </div>
       </div>
-      <%= link_to "Back", events_path, class: " my-2 btn_blue float-left" %>
+      <%= link_to "Back", events_path, class: "my-2 btn_blue float-left" %>
       <%= link_to "Delete", event_path(@event), method: :delete, class: "my-2 btn_red float-right", data: { confirm: 'Are You Sure?'} %>
     </div>
   </div>
