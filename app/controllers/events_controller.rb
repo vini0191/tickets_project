@@ -32,6 +32,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @twitter_text = "Check out this event at"
+  end
+
   private
 
   def filter_by_date
