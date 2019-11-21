@@ -23,11 +23,13 @@
 .nav-link {
   font-size: 15px;
   color: white !important;
+  opacity: 0.6;
 }
 
 .nav-link:hover {
-  background-color: gray;
+  // background-color: gray;
   // rgb(0, 81, 245);
+  opacity: 1;
   border-radius: 2px;
 }
 
