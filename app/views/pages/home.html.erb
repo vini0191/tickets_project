@@ -47,9 +47,9 @@
               <h2><%= event.title %></h2>
               <p><%= event.location %></p>
               <p><%= event.start_time %></p>
-              <p>Short description here!</p>
+              <p style="width: 90%;"><%= truncate(event.description, length: 80) %></p>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
+            <h2 class="card-trip-pricing"><%= event.tickets.count.positive? ? "from £ #{event.tickets.min { |a, b| a.price <=> b.price }.price / 100.0 }" : '' %></h2>
           </div>
         </div>
         <% end %>
