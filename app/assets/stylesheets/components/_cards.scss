@@ -18,7 +18,7 @@
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
@@ -33,10 +33,11 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: end;
   position: relative;
   color: black;
+  height: 130px;
 }
 
 .card-trip-infos .card-trip-user {
@@ -56,4 +57,25 @@
 
 .ticket-option {
   background-color: white;
+}
+
+.card-date {
+  display: flex;
+  align-items: end;
+}
+
+.start-time-red-month {
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+.start-time-day {
+  margin: 0;
+  padding: 0;
+}
+
+.price-tag {
+  font-size: 16px !important;
+  font-weight: bold;
 }

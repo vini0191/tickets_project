@@ -15,7 +15,6 @@ class EventsController < ApplicationController
     else
       @events = []
     end
-    # @events
   end
 
   def destroy
