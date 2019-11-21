@@ -12,10 +12,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active home-button mr-1 home-button mb-2 mr-2">
-          <%= link_to "Home", "#", class: "nav-link text-white" %>
+          <%= link_to "Home", root_path, class: "nav-link text-white" %>
         </li>
         <li class="nav-item events-button mr-2 events-button mb-2 mr-2">
-          <%= link_to "Events", "#", class: "nav-link text-white" %>
+          <%= link_to "Events", events_path, class: "nav-link text-white" %>
         </li>
         <li class="nav-item dropdown">
           <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
