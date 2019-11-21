@@ -4,6 +4,7 @@ class TradesController < ApplicationController
 
   def show
     # raise
+    @page_name = "Tickets of #{@event.title}"
   end
 
   def create
