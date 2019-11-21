@@ -33,7 +33,7 @@
 	border:1px solid #d83526;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:#fff;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
@@ -44,6 +44,7 @@
 .btn_red:hover {
 	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
 	background-color:#ce0100;
+  color:#fff;
 }
 .btn_red:active {
 	position:relative;
