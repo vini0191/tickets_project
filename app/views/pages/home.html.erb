@@ -34,53 +34,13 @@
 
 
 <div class="container">
-  <h4 class="mt-5 mb-2 text-white">Recently added events</h4>
-
-  <div class="row mb-3">
-    <% @events_recent.each do |event| %>
-      <div class="col-sm-4 mb-3">
-        <%= link_to event do %>
-        <div class="card-trip">
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=2467&q=80" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= event.title %></h2>
-              <p><%= event.location %></p>
-              <p><%= event.start_time %></p>
-              <p style="width: 90%;"><%= truncate(event.description, length: 80) %></p>
-            </div>
-            <h2 class="card-trip-pricing"><%= event.tickets.count.positive? ? "from £ #{event.tickets.min { |a, b| a.price <=> b.price }.price / 100.0 }" : '' %></h2>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <h4 class="my-5 mb-2 text-white">Recently added events</h4>
+  <%= render 'shared/event_card', events: @events_recent %>
 </div>
 
 <div class="container">
   <h4 class="mt-5 mb-2 text-white">More Events</h4>
-
-  <div class="row mb-3">
-    <% @events_diff.each do |event| %>
-      <div class="col-sm-4 mb-3">
-        <%= link_to event do %>
-        <div class="card-trip">
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=2467&q=80" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= event.title %></h2>
-              <p><%= event.location %></p>
-              <p><%= event.start_time %></p>
-              <p>Short description here!</p>
-            </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
-          </div>
-        </div>
-      <% end %>
-     </div>
-    <% end %>
-  </div>
+  <%= render 'shared/event_card', events: @events_diff %>
   <%= link_to events_path do %>
   <div class="d-flex justify-content-center">
     <button class="btn btn-lg btn-outline-light deco-none ">See more</button>
