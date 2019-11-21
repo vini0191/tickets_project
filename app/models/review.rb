@@ -7,4 +7,5 @@ class Review < ApplicationRecord
     message: "Rate already done"
   }
 
+  validates :rate, inclusion: { in: (1..5).to_a }
 end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/edit'
+  get 'reviews/index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
