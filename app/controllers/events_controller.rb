@@ -15,7 +15,6 @@ class EventsController < ApplicationController
     else
       @events = Event.all.page(params[:page]).per(18)
     end
-    # @events
   end
 
   def destroy
