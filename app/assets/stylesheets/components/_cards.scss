@@ -34,8 +34,10 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
+  justify-content: end;
   position: relative;
   color: black;
+  height: 130px;
 }
 
 .card-trip-infos .card-trip-user {
@@ -62,15 +64,18 @@
   align-items: end;
 }
 
-#start-time-red-month {
+.start-time-red-month {
   color: red;
   margin: 0;
   padding: 0;
 }
 
-#start-time-day {
+.start-time-day {
   margin: 0;
   padding: 0;
 }
 
-
+.price-tag {
+  font-size: 16px !important;
+  font-weight: bold;
+}
