@@ -17,6 +17,7 @@
 .btn_blue:hover {
 	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
 	background-color:#1e62d0;
+  color: white;
 }
 .btn_blue:active {
 	position:relative;
@@ -44,7 +45,9 @@
 .btn_red:hover {
 	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
 	background-color:#ce0100;
+  color: white;
 }
+
 .btn_red:active {
 	position:relative;
 	top:1px;
@@ -70,7 +73,7 @@
 }
 .btn_grey:hover {
 	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-	background-color:#dfdfdf;
+  background-color:#dfdfdf;
 }
 .btn_grey:active {
 	position:relative;
