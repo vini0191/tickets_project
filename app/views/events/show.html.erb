@@ -41,7 +41,8 @@
             <% end %>
           </div>
           <%= link_to "New ticket", new_event_ticket_path(@event), class: 'btn_blue float-right' %>
-          <div class="fb-share-button" data-href=<%= link_to event_path %> data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+          <div class="fb-share-button" data-href=<%= request.original_url %> data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+          <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
         </div>
       </div>
       <%= link_to "Back", events_path, class: " my-2 btn_blue float-left" %>
