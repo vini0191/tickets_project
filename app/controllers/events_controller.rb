@@ -2,10 +2,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show destroy]
 
   def new
+    @page_name = 'Register an event'
     @event = Event.new
   end
 
   def index
+    @page_name = 'Events'
     if params[:search].present?
       @events = Event.where('lower(location) LIKE ?', "%#{params[:search][:location].downcase}%")
                      .where('lower(title) LIKE ?', "%#{params[:search][:title].downcase}%")
@@ -33,6 +35,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @page_name = @event.title
     @twitter_text = "Check out this event at"
   end
 

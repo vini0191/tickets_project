@@ -5,13 +5,16 @@ class TicketsController < ApplicationController
   # before_action :set_event, only: %i[new create edit show update]
 
   def index
+    @page_name = 'Tickets'
     @tickets = Ticket.all
   end
 
   def show
+    @page_name = @ticket.event.title
   end
 
   def new
+    @page_name = 'Register a ticket'
     @ticket = Ticket.new
   end
 
@@ -28,6 +31,7 @@ class TicketsController < ApplicationController
   end
 
   def edit
+    @page_name = 'Edit your ticket'
   end
 
   def update
