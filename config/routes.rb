@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :tickets, only: %i[new create]
   end
 
-  resources :trades, only: %i[index show]
+  resources :trades, only: %i[index show] do
+    resources :reviews, only: %i[new create]
+  end
+
+  resources :review, only: %i[edit update]
 
 end
