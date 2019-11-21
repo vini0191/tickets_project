@@ -15,9 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @page_name = "Edit your profile"
+    super
+  end
 
   # PUT /resource
   # def update
