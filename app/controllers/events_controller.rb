@@ -6,10 +6,6 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-  def show
-    @page_name = @event.title
-  end
-
   def index
     @page_name = 'Events'
     if params[:search].present?
@@ -39,6 +35,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @page_name = @event.title
     @twitter_text = "Check out this event at"
   end
 

@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def user_profile
-    @page_name = 'User profile'
     @user = User.find(params[:id])
+    @page_name = "#{@user.name.split(' ').first}'s profile"
   end
 end
