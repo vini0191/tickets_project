@@ -10,12 +10,21 @@ class EventsController < ApplicationController
     @page_name = 'Events'
     if params[:search].present?
       @events = Event.where('lower(location) LIKE ?', "%#{params[:search][:location].downcase}%")
-                     .where('lower(title) LIKE ?', "%#{params[:search][:title].downcase}%")
-                     .page(params[:page]).per(18)
+                    .where('lower(title) LIKE ?', "%#{params[:search][:title].downcase}%")
+                    .page(params[:page]).per(18)
       filter_by_date unless params[:search][:date].empty?
       @events = Kaminari.paginate_array(@events).page(params[:page]).per(18)
     else
       @events = Event.all.page(params[:page]).per(18)
+    end
+
+    @events = Event.geocoded #returns events with coordinates
+    @markers = @events.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        image_url: helpers.asset_url('logo-yoohood.png')
+      }
     end
   end
 
