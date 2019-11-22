@@ -41,17 +41,20 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
+        <li class="nav-item events-button mr-2 events-button mt-1 mr-2">
           <%= link_to "About", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
+        <li class="nav-item events-button mr-2 events-button mt-1 mr-2">
           <%= link_to "Help", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item events-button mt-1 mr-3">
+        <li class="nav-item events-button mt-1 mr-2">
           <%= link_to "Work with us", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
+        <li class="nav-item events-button mr-2 events-button mt-1 mr-2">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item events-button mr-2 events-button mt-1 mr-2">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
