@@ -17,13 +17,18 @@
         </li>
         <% end %>
         <li class="nav-item events-button mt-1 mr-3">
+          <%= link_to "About", "#", class: "nav-link" %>
+        </li>
+        <% unless current_page?(events_path) %>
+        <li class="nav-item events-button mt-1 mr-3">
           <%= link_to "Events", events_path, class: "nav-link" %>
         </li>
+        <% end %>
         <li class="nav-item events-button mt-1 mr-3">
           <%= link_to "Help", "#", class: "nav-link"%>
         </li>
         <li class="nav-item events-button mt-1 mr-3">
-          <%= link_to "About", "#", class: "nav-link" %>
+          <%= link_to "Work with us", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
@@ -36,11 +41,14 @@
           </div>
         </li>
       <% else %>
-      <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
-          <%= link_to "Contact", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
           <%= link_to "About", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
+          <%= link_to "Help", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item events-button mt-1 mr-3">
+          <%= link_to "Work with us", "#", class: "nav-link" %>
         </li>
         <li class="nav-item events-button mr-2 events-button mt-1 mr-3">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>

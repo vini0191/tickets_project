@@ -1,8 +1,11 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "concert-image.jpg" %>')">
+<div class="banner d-flex align-items-center">
+  <video autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+  </video>
   <div class="container">
     <div class="banner-content">
-      <h1 class="text-center p-3 mb-2 text-white ban-test">Find the perfect event</h1>
+      <h1 class="text-center pb-1 mb-2 text-white header_one">Find the <strong class="text-primary">perfect</strong> event for <strong class="text-primary">you</strong></h1>
 
       <%= simple_form_for :search, url: events_path, method: :get do |f| %>
 
@@ -12,18 +15,18 @@
           <input type="text" class="form-control" type="text" name="search[location]" placeholder="city or zipcode">
          </div>
 
-         <div class="col-sm-3 my-1">
+         <div class="col-sm-3 my-1 p-1">
            <label class="sr-only" for="inlineFormInputDate">date</label>
            <input type="date" class="form-control" name="search[date]" id="search_date">
          </div>
 
-         <div class="col-sm-3 my-1">
+         <div class="col-sm-3 my-1 p-1">
            <label class="sr-only" for="inlineFormInputGroupEvent">Event</label>
            <input type="text" class="form-control" type="text" name="search[title]" placeholder="event, artist or venue">
          </div>
 
-         <div class="col-auto my-1">
-           <button type="submit" class="btn btn-outline-light btn-block">Submit</button>
+         <div class="col-sm-9 my-1 p-1">
+           <button type="submit" class="btn btn-primary btn-block">Search</button>
          </div>
        </div>
 

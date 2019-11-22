@@ -8,7 +8,7 @@
 }
 
 .navbar-appear {
-  background-color: rgba(35, 33, 33, 0.8);
+  background-color: rgba(34, 41, 43, 0.8);
   box-shadow: 0 0 15px rgba(0,0,0, 0.5);
 }
 
@@ -23,11 +23,13 @@
 .nav-link {
   font-size: 15px;
   color: white !important;
+  opacity: 0.6;
 }
 
 .nav-link:hover {
-  background-color: gray;
+  // background-color: gray;
   // rgb(0, 81, 245);
+  opacity: 1;
   border-radius: 2px;
 }
 
