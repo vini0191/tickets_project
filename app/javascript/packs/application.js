@@ -5,10 +5,10 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox, initAutocomplete } from '../plugins/init_mapbox';
 import { initStarRating } from '../plugins/init_star_rating';
-// import { initInput } from '../components/searchbox';
+import { initInputMask } from '../components/init_input_mask';
 
 navbarScroll();
 initStarRating();
 initMapbox();
 initAutocomplete();
-// initInput();
+initInputMask();
