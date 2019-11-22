@@ -36,7 +36,7 @@ class TicketsController < ApplicationController
 
   def update
     @ticket.update(ticket_params)
-    redirect_to event_path(@event)
+    redirect_to event_path(@ticket.event)
   end
 
   def destroy
@@ -55,6 +55,6 @@ class TicketsController < ApplicationController
   end
 
   def set_event
-    @event = Event.find(params[:event_id])
+    @event = Event.find(params[:event_id]) if params[:event_id].present?
   end
 end
