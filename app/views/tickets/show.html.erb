@@ -1,13 +1,29 @@
-<div class="container">
-  <div class="row justify-content-center mt-4">
-    <div class="col-sm-12 col-md-4">
-      <div class="card p-4">
-        <p>Price: <%= @ticket.price %></p>
-        <p>Seat: <%= @ticket.seat %></p>
-        <p>Area: <%= @ticket.area %></p>
+<div class="container padding-top-page-content">
+  <div class="row justify-content-between mt-4">
+      <div class="card pt-5 px-5 col-sm-12 col-lg-5 m-2">
+        <div class="card-title">
+          <p class="py-2">Buyer:</p>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
+            <%= image_tag current_user.photo.url ? current_user.photo.url : placeholder , class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <h2><%= current_user.name %></h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p class="text-right">Please, check your info:</p>
+            <h5 class="text-right"><%= current_user.email %></h5>
+          </div>
+          <%= link_to 'Edit', new_ticket_trade_path(@ticket), class: "btn_blue float-right mt-2" %>
+        </div>
       </div>
+    <div class="card col-lg-5 p-4 d-flex justify-content-end">
+      <div class="card-title"><h1><%= @ticket.event.title %></h1></div>
+      <h4>$ <%= @ticket.price / 100.0 %></h5>
+      <h5>Seat: <%= @ticket.seat %></h5>
+      <h5>Area: <%= @ticket.area %></h5>
       <%= link_to 'Buy', new_ticket_trade_path(@ticket), class: "btn_blue float-right mt-2" %>
-      <%= link_to 'Back', event_path(@ticket.event), class: "btn_red float-left mt-2" %>
     </div>
   </div>
+      <%= link_to 'Back', event_path(@ticket.event), class: "btn_red float-left mt-2" %>
 </div>

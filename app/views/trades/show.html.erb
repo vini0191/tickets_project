@@ -3,44 +3,46 @@
     <div class="row justify-content-center mb-5">
       <h1>CHECK OUT</h1>
     </div>
-    <div class="row justify-content-center">
-      <div class="card col-sm-12 col-md-4 mx-3">
+    <div class="row col-sm-12 justify-content-between p-5 m-2">
+      <div class="card pt-5 px-5 col-sm-12 col-lg-5 m-2">
         <div class="card-title">
           <p class="py-2">Buyer:</p>
           <div class="d-flex flex-row justify-content-between align-items-center">
             <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
             <%= image_tag current_user.photo.url ? current_user.photo.url : placeholder , class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <h1><%= current_user.name %></h1>
+            <h2><%= current_user.name %></h2>
           </div>
         </div>
         <div class="card-body">
           <div class="card-text">
-            <p>Please, check your info:</p>
-            <p><%= current_user.email %></p>
+            <p class="text-right">Please, check your info:</p>
+            <h5 class="text-right"><%= current_user.email %></h5>
           </div>
         </div>
       </div>
-      <div class="card col-sm-12 col-md-4 mx-3">
+      <div class="card pt-5 px-5 col-sm-12 col-lg-5 m-2">
         <div class="card-title">
           <p class="py-2">Seller:</p>
           <div class="d-flex flex-row justify-content-between align-items-center">
             <% placeholder = "https://www.wittenberg.edu/sites/default/files/2018-10/nouser_0.jpg" %>
             <%= image_tag @ticket.user.photo.url ? @ticket.user.photo.url : placeholder , class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <h1><%= @ticket.user.name %></h1>
+            <h2><%= @ticket.user.name %></h2>
           </div>
         </div>
         <div class="card-body">
           <div class="card-text">
-            <p>How to contact:</p>
-            <p><%= @ticket.user.email %></p>
+            <p class="text-right">How to contact:</p>
+            <h5 class="text-right"><%= @ticket.user.email %></h5>
           </div>
         </div>
+        <div class="card-text text-center my-4">
+          <p><%= link_to "Add a review", new_trade_review_path(@trade), class: 'btn_blue' %></p>
+        </div>
+      </div>
+      <div class="w-100 d-flex justify-content-between px-1 my-5">
+        <p><%= link_to "back to event", event_path(@ticket.event), class: 'btn_blue' %></p>
+        <p><%= link_to "back to home", events_path, class: 'btn_blue' %></p>
       </div>
     </div>
-      <div class="row justify-content-between px-1 my-5">
-        <p><%= link_to "back to event", event_path(@ticket.event), class: 'btn_blue mx-3' %></p>
-        <p><%= link_to "add a review", new_trade_review_path(@trade), class: 'btn_blue float-right mx-3' %></p>
-        <p><%= link_to "back to home", events_path, class: 'btn_blue float-right mx-3' %></p>
-      </div>
   </div>
 </div>
