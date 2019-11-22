@@ -46,6 +46,11 @@ class EventsController < ApplicationController
   def show
     @page_name = @event.title
     @twitter_text = "Check out this event at"
+    @marker = [{
+      lat: @event.latitude,
+      lng: @event.longitude,
+      image_url: helpers.asset_url('logo-yoohood.png')
+    }]
   end
 
   private
@@ -60,6 +65,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :start_time, :location, :category, :photo)
+    params.require(:event).permit(:title, :start_time, :location, :category, :photo, :description)
   end
 end
