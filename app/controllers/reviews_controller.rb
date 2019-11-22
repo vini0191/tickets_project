@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_trade, only: %i[new create]
+
+  def index
+    @reviews = Review.where(user: current_user)
+  end
+
   def new
     @page_name = 'Add a reivew'
     @review = Review.new
@@ -19,12 +24,10 @@ class ReviewsController < ApplicationController
   def edit
   end
 
-  def index
-  end
-
   private
 
   def review_params
+    params[:review][:rate] = params[:review][:rate].to_i + 1
     params.require(:review).permit(:description, :rate)
   end
 
