@@ -21,9 +21,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    # super
+    # raise
+    if :account_update
+      redirect_to user_profile_path(current_user)
+    else
+      render :edit
+    end
+  end
 
   # DELETE /resource
   # def destroy

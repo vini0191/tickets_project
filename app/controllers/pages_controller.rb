@@ -16,6 +16,6 @@ class PagesController < ApplicationController
     trades_with_review.each do |trade|
       total_rate += trade.review.rate
     end
-    @avarage_rate = (total_rate.to_f / trades_with_review.count).round(1)
+    @avarage_rate = total_rate.zero? ? 0 : (total_rate.to_f / trades_with_review.count).round(1)
   end
 end
