@@ -17,8 +17,8 @@ class EventsController < ApplicationController
     else
       @events = Event.all.page(params[:page]).per(18)
     end
-
-    @events = Event.geocoded #returns events with coordinates
+    # @events = Event.geocoded # returns events with coordinates
+    # raise
     @markers = @events.map do |event|
       {
         lat: event.latitude,
