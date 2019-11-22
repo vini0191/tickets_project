@@ -1,6 +1,6 @@
 
 <div class="banner d-flex align-items-center">
-  <video autoplay muted loop>
+  <video autoplay muted loop style="z-index: -2;">
     <source src="video.mp4" type="video/mp4">
   </video>
   <div class="container">
@@ -37,7 +37,7 @@
 
 
 <div class="container">
-  <h4 class="my-5 mb-2 text-white">Recently added events</h4>
+  <h4 class="my-1 mb-2 text-white">New events</h4>
   <%= render 'shared/event_card', events: @events_recent %>
 </div>
 
