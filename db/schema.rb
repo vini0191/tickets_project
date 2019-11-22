@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 2019_11_21_201833) do
     t.float "longitude"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "rate", default: 0
+    t.bigint "user_id"
+    t.bigint "trade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trade_id"], name: "index_reviews_on_trade_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.integer "price"
     t.string "seat"
@@ -66,6 +77,8 @@ ActiveRecord::Schema.define(version: 2019_11_21_201833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reviews", "trades"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tickets", "events"
   add_foreign_key "tickets", "users"
   add_foreign_key "trades", "tickets"

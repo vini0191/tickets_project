@@ -39,6 +39,7 @@
     </div>
       <div class="row justify-content-between px-1 my-5">
         <p><%= link_to "back to event", event_path(@ticket.event), class: 'btn btn-outline-primary mx-3' %></p>
+        <p><%= link_to "add a review", new_trade_review_path(@trade), class: 'btn btn-outline-primary float-right mx-3' %></p>
         <p><%= link_to "back to home", events_path, class: 'btn btn-outline-primary float-right mx-3' %></p>
       </div>
   </div>

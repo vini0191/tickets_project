@@ -10,5 +10,12 @@ class PagesController < ApplicationController
   def user_profile
     @user = User.find(params[:id])
     @page_name = "#{@user.name.split(' ').first}'s profile"
+    @trades = @user.trades
+    trades_with_review = @trades.select { |trade| trade.review.present? }
+    total_rate = 0
+    trades_with_review.each do |trade|
+      total_rate += trade.review.rate
+    end
+    @avarage_rate = (total_rate.to_f / trades_with_review.count).round(1)
   end
 end
