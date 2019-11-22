@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
     @ticket.user = current_user
     @ticket.event = @event
     if @ticket.save
-      redirect_to event_path(@ticket.event)
+      redirect_to event_path(@event)
     else
       render :new
     end
