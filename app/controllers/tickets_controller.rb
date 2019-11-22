@@ -22,7 +22,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
     @ticket.event = @event
-    # raise
     if @ticket.save
       redirect_to event_path(@ticket.event)
     else
@@ -47,6 +46,8 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
+    price = (params[:ticket][:price].split(' ')[1].to_f * 100).to_i
+    params[:ticket][:price] = price
     params.require(:ticket).permit(:price, :seat, :area)
   end
 

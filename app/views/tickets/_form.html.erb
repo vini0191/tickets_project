@@ -6,7 +6,7 @@
       </div>
       <div class="card-body">
         <%= simple_form_for [@event, @ticket] do |f| %>
-          <%= f.input :price %>
+          <%= f.input :price, as: :string, input_html: { class: 'currency' } %>
           <%= f.input :seat %>
           <%= f.input :area %>
           <%= link_to 'Back', event_path(@event), class: "btn_red" %>
