@@ -1,7 +1,10 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "concert-image.jpg" %>')">
+<div class="banner">
+  <video autoplay muted loop>
+    <source src="https://video-previews.elements.envatousercontent.com/h264-video-previews/9d03e259-8018-4d3f-9cd2-62e7e090741e/18549025.mp4" type="video/mp4">
+  </video>
   <div class="container">
-    <div class="banner-content">
+    <div class="banner-content align-middle">
       <h1 class="text-center pb-2 mb-2 text-white header_one">Find the <strong class="text-primary">perfect</strong> event for <strong class="text-primary">you</strong></h1>
 
       <%= simple_form_for :search, url: events_path, method: :get do |f| %>
@@ -22,7 +25,7 @@
            <input type="text" class="form-control" type="text" name="search[title]" placeholder="event, artist or venue">
          </div>
 
-         <div class="col-auto my-1">
+         <div class="col-sm-9 my-1">
            <button type="submit" class="btn btn-primary btn-block">Submit</button>
          </div>
        </div>
