@@ -10,18 +10,16 @@
           </div>
         </div>
         <div class="card-body p-4">
-          <div class="d-flex justify-content-between">
-            <div class="card-text text-justify">
-              <p><%= @user.description %></p>
-            </div>
-            <div class="d-flex flex-column align-items-end">
-              <div class="class card-text">Avarage rating</div>
-              <div class="class card-text"><%= '⭐️' * @avarage_rate %> (<%= @avarage_rate %>)</div>
-            </div>
+          <div class="d-flex flex-column align-items-end">
+            <div class="class card-text">Avarage rating</div>
+            <div class="class card-text"><%= '⭐️' * @avarage_rate %> (<%= @avarage_rate %>)</div>
+          </div>
+          <div class="card-text text-justify mt-3">
+            <p><%= @user.description %></p>
           </div>
           <div class="review-cards mt-5">
             <% @trades.each do |trade| %>
-              <% if trade.review.presence %>
+              <% if trade.review.present? %>
                 <div class="card m-1 shade-sm bg-dark">
                   <div class="card-body">
                     <div class="card-text">
@@ -36,9 +34,11 @@
             <% end %>
           </div>
           <div class="my-4">
-            <%= link_to "Back", :back, class: 'btn_red float-left' %>
             <% if @user == current_user %>
+              <%= link_to "Home", root_path, class: 'btn_red float-left' %>
               <%= link_to "Edit", edit_user_registration_path, class: 'btn_blue float-right' %>
+            <% else %>
+              <%= link_to "Back", :back, class: 'btn_red float-left' %>
             <% end %>
           </div>
         </div>

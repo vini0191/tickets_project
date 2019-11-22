@@ -17,7 +17,7 @@ class TradesController < ApplicationController
   def create
     @trade = Trade.new
     @trade.ticket = set_ticket
-    @trade.user = current_user
+    @trade.user = set_ticket.user
     if @trade.save
       redirect_to trade_path(@trade)
     else
