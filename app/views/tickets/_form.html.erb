@@ -2,14 +2,14 @@
   <div class="row justify-content-center">
     <div class="card">
       <div class="card-title p-4">
-        <h1>Add a ticket to <%= @event.title %></h1>
+        <h1>Add a ticket to <%= @ticket.event.title %></h1>
       </div>
       <div class="card-body">
         <%= simple_form_for [@event, @ticket] do |f| %>
           <%= f.input :price, as: :string, input_html: { class: 'currency' } %>
           <%= f.input :seat %>
           <%= f.input :area %>
-          <%= link_to 'Back', event_path(@event), class: "btn_red" %>
+          <%= link_to 'Back', event_path(@ticket.event), class: "btn_red" %>
           <%= f.submit class: "btn_blue float-right" %>
         <% end %>
       </div>
