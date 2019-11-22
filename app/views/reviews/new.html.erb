@@ -1,0 +1,11 @@
+<div class="container padding-top-page-content">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-5">
+      <%= simple_form_for [@trade, @review] do |f| %>
+        <%= f.input :description %>
+        <%= f.input :rate, collection: (0...5) %>
+        <%= f.button :submit, value: 'send review', class: 'btn_blue float-right', data: { confirm: 'Thanks for your review' } %>
+      <% end %>
+    </div>
+  </div>
+</div>

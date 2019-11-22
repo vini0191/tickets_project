@@ -18,6 +18,7 @@ gem 'devise'
 gem 'faker'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'geocoder'
 
 # gems to deal with events images
 gem 'dotenv-rails', groups: %i[development test]
@@ -34,5 +35,4 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
 end
