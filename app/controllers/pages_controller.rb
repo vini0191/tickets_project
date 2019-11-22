@@ -17,5 +17,6 @@ class PagesController < ApplicationController
       total_rate += trade.review.rate
     end
     @avarage_rate = total_rate.zero? ? 0 : (total_rate.to_f / trades_with_review.count).round(1)
+    # raise
   end
 end
