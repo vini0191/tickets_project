@@ -7,7 +7,6 @@
 }
 
 .banner-content {
-  padding-top: 70px;
 }
 
 .header_one {
@@ -20,8 +19,8 @@
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
+  height: 80%;
+  object-fit: cover;
   z-index: 0;
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
@@ -41,4 +40,8 @@
   background-color: black;
   opacity: 0.5;
   z-index: 1;
+}
+
+.video-image {
+
 }
